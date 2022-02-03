@@ -1,10 +1,11 @@
 const express = require('express');
+const { isValidObjectId } = require('mongoose');
 const Cinema = require('../models/Cinema');
 
 const cinemasRouter = express.Router();
 
 cinemasRouter.get('/', (req, res, next) => {
-    return Cinema.find()
+    return Cinema.find().populate("movies")
         .then(cinemas => {
             return res.status(200).json(cinemas);
         })
@@ -56,9 +57,9 @@ cinemasRouter.put('/:id/movies', (req, res, next) => {
 
     return Cinema.findByIdAndUpdate(
         cinemaId,
-        { $push: { movies: idMovieToAdd } },
+        { $push: { movies:idMovieToAdd } },
         { new: true }
-    )
+    ).populate("movies")
         .then(cinemaUpdated => {
             return res.status(200).json(cinemaUpdated);
         })

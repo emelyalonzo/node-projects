@@ -4,7 +4,7 @@ const DB_URL = 'mongodb+srv://admin:admin@moviedb.htse8.mongodb.net/MovieDB?retr
 
 const connectDB = () => mongoose.connect(DB_URL, {
     useNewUrlParser: true,
-    useUnifiedTopology: true,
+    useUnifiedTopology: true
 });
 
 module.exports = {connectDB}
