@@ -1,0 +1,177 @@
+{
+	"info": {
+		"_postman_id": "91815935-5212-4a03-b077-c2b8a7215e06",
+		"name": "Movies",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Movies",
+			"item": [
+				{
+					"name": "Movies list",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/movies",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"movies"
+							],
+							"query": [
+								{
+									"key": "madeAfter",
+									"value": "2010",
+									"description": "Movies made after a year",
+									"disabled": true
+								},
+								{
+									"key": "madeBefore",
+									"value": "2015",
+									"description": "Movies made before a year",
+									"disabled": true
+								},
+								{
+									"key": "genre",
+									"value": "Acción",
+									"description": "Movies with an specific genre",
+									"disabled": true
+								},
+								{
+									"key": "title",
+									"value": "The Matrix",
+									"description": "Movies with that title",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get an specific movie",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/movies/:id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"movies",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "61f95a29ba7968f89974e8f5",
+									"description": "Id of the movie "
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create a movie",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Moonfall\",\r\n    \"director\": \"Roland Emmerich\",\r\n    \"year\": 2022,\r\n    \"genre\": \"Acción\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/movies",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"movies"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit a movie",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/movies/:id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"movies",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "61f52135a5d6630dae2a5cac",
+									"description": "Id of the movie"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete a movie",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/movies/:id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"movies",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "61f2ff477b8bd05d440384ec",
+									"description": "Id of the movie"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

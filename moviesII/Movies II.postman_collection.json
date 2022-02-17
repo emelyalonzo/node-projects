@@ -1,0 +1,356 @@
+{
+	"info": {
+		"_postman_id": "72e5765a-0d05-45ed-b8b4-fadfc91ca825",
+		"name": "Movies II",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Movies",
+			"item": [
+				{
+					"name": "Movies list",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/movies",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"movies"
+							],
+							"query": [
+								{
+									"key": "madeAfter",
+									"value": "2010",
+									"description": "Movies made after a year",
+									"disabled": true
+								},
+								{
+									"key": "madeBefore",
+									"value": "2015",
+									"description": "Movies made before a year",
+									"disabled": true
+								},
+								{
+									"key": "genre",
+									"value": "Acción",
+									"description": "Movies with an specific genre",
+									"disabled": true
+								},
+								{
+									"key": "title",
+									"value": "The Matrix",
+									"description": "Movies with that title",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get an specific movie",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/movies/:id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"movies",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "61fbc2f977695470cf462c17",
+									"description": "Id of the movie "
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create a movie",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Moonfall\",\r\n    \"director\": \"Roland Emmerich\",\r\n    \"year\": 2022,\r\n    \"genre\": \"Acción\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/movies",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"movies"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit a movie",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/movies/:id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"movies",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "61f52135a5d6630dae2a5cac",
+									"description": "Id of the movie"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete a movie",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/movies/:id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"movies",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "61f2ff477b8bd05d440384ec",
+									"description": "Id of the movie"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Cinemas",
+			"item": [
+				{
+					"name": "Cinemas list",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/cinemas",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"cinemas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get an specific Cinema",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/cinemas/:id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"cinemas",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "61fbc9bb5e7d6f85e761e1e1",
+									"description": "Id of the cinema"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create a Cinema",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Ideal\",\r\n    \"location\": \"Centro\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/cinemas",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"cinemas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit a Cinema",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/cinemas/:id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"cinemas",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "",
+									"description": "Id of the cinema"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add a movie to a Cinema",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"movieId\":\"61fbc2f977695470cf462c19\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/cinemas/:id/movies",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"cinemas",
+								":id",
+								"movies"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "61fbc9c85e7d6f85e761e1e3",
+									"description": "Id of the cinema"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete a Cinema",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/cinemas/:id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"cinemas",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "61fbb96d3fa31c6dd78c6602",
+									"description": "Id of the cinema"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
